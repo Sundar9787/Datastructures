@@ -1,0 +1,16 @@
+weight = int(input('Enter weight(in kg) : '))
+height = float(input('Enter height(in m) : '))
+def GetBMICategory(weight, height):
+    BMI = weight / (height **2)
+    if BMI < 18:
+        return 0
+    elif 18 <= BMI and BMI <25:
+        return 1 
+    elif 25 <= BMI and BMI <30:
+        return 2 
+    elif 30 <= BMI and BMI <40:
+        return 3 
+    else:
+        return 4 
+
+print(GetBMICategory(weight,height))
