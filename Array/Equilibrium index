@@ -1,0 +1,25 @@
+arr=[1,2,3,6,3,2,1]
+mid = (0 + len(arr)-1)//2
+p1=0
+p2=0
+for i in range(mid):
+    p1 = p1 + arr[i]
+    
+for i in range(mid+1,len(arr)):
+    p2 = p2 + arr[i]
+    
+
+if p1 == p2:
+    print(mid)
+
+else:
+    print('-1')
+    
+ 
+        
+
+    
+
+        
+    
+    
