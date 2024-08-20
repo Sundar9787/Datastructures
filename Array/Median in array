@@ -1,0 +1,12 @@
+arr1=[-10, -3, 0]
+arr2=[-6, 2, 4]
+ans = sorted(arr2+arr1)
+mid = (len(ans)-1)//2
+for num in ans:
+    if len(ans)%2 == 0:
+        res = (ans[mid] + ans[mid+1])/2
+
+    else:
+        res = ans[mid]
+        
+print(res)
