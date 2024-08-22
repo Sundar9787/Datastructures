@@ -1,0 +1,13 @@
+arr=[(1,2),(2,1),(3,4),(4,5),(5,4)]
+sym_dir={}
+sym_arr=[]
+for num in arr:
+    first, second = num
+    
+    if first in sym_dir and sym_dir[first]==second:
+        sym_arr.append((first,second))
+        
+    else:
+        sym_dir[second]= first
+        
+print(sym_arr)
