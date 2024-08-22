@@ -1,0 +1,11 @@
+arr=[3,7,8,9,10,11]
+N=len(arr)
+k=int(input('Enter no of Position: '))
+direction = 'right'
+if direction =='right':
+    d = k%N 
+    print(arr[-d:]+arr[:-d])
+elif direction == 'left':
+    l = k%N
+    print(arr[l:] + arr[:l])       
+    
