@@ -1,0 +1,13 @@
+arr=[4,2,8,6,15,5,9,20]
+arr.sort()
+ascend =[]
+descend=[]
+mid = len(arr)//2
+for i in range(mid):
+    ascend.append(arr[i])
+    
+for i in range(mid,len(arr)):
+    descend.append(arr[i])
+    
+answer = ascend + descend[::-1]
+print(answer)
