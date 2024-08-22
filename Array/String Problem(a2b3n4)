@@ -1,0 +1,13 @@
+string= input('Enter value:')
+result=''
+i=0
+while i < len(string):
+    char = string[i]
+    i = i + 1 
+    num = int(string[i])
+    i = i + 1 
+    
+    result = result + char * num 
+    
+print(result)
+    
