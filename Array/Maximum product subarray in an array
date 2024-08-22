@@ -1,0 +1,11 @@
+arr = [6, -3, -10, 0, 2]
+curr_product = 1
+max_product = 0 
+for i in range(len(arr)):
+    if arr[i] == 0:
+        curr_product = 1 
+    else:
+        curr_product *= arr[i]
+        max_product = max(curr_product, max_product)
+
+print(max_product)
