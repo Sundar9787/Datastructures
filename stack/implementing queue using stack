@@ -1,0 +1,28 @@
+class queueusingstack:
+    def __init__(self):
+        self.stack1=[]
+        self.stack2=[]
+        
+    def enqueue(self,value):
+        self.stack1.append(value)
+    
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        if not self.stack2:
+            return "There is no elements in the stack"
+        return self.stack2.pop()
+        
+    def display(self):
+        queue = self.stack2[::-1]+self.stack1
+        print(queue)
+        
+stq=queueusingstack()
+stq.enqueue(10)
+stq.enqueue(20)
+stq.enqueue(30)
+stq.enqueue(40)
+stq.dequeue()
+stq.dequeue()
+stq.display()
