@@ -1,0 +1,52 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        
+class SingleLinkedlist:
+    def __init__(self):
+        self.head = None
+        
+    
+    def insert(self,value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+                
+            temp.next = new_node
+            
+    def rotate(self,k):
+        if self.head is None or k==0:
+            return
+        for n in range(k):
+            curr=self.head
+            while curr.next:
+                curr = curr.next
+            curr.next = self.head
+            self.head = self.head.next
+            curr = curr.next
+            curr.next = None
+            
+            
+            
+            
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data,end="->")
+            temp = temp.next
+        print("None")
+        
+    
+        
+sll=SingleLinkedlist()
+for i in [1,2,3,4,5]:
+    sll.insert(i)
+sll.rotate(2)
+sll.display()
+
+        
