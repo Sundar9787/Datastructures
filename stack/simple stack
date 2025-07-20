@@ -1,0 +1,40 @@
+class Stack:
+    def __init__(self):
+        self.stack =[]
+    
+    def push(self,value):
+        self.stack.append(value)
+        print(f'Element {value} is pushed into stack')
+    
+    def pop(self):
+        if self.is_empty():
+            print("This is an empty stack")
+        else:
+            removed = self.stack.pop()
+            print(f'Element{removed} is popped from the stack')
+            
+    def peek(self):
+        if self.is_empty():
+            print("This is an empty stack")
+        else:
+            print(f"The Top element of the stack is: {self.stack[-1]}")
+    
+    def is_empty(self):
+        if len(self.stack)==0:
+            return
+        
+    def display(self):
+        if self.is_empty():
+            print("This is an empty stack")
+        else:
+            print("The stack from Top to bottom is: ")
+            for item in reversed(self.stack):
+                print(item)
+                
+st = Stack()
+for i in [1,7,10,11,13,12]:
+    st.push(i)
+st.pop()
+st.peek()
+st.display()
+        
