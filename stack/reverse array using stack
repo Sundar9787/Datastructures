@@ -1,0 +1,15 @@
+def reverse_stack(list_s):
+    stack=[]
+    ans_array=[]
+    for char in list_s:
+        stack.append(char)
+    while stack:
+        ans_array.append(stack.pop())
+        
+    ans =''.join(ans_array)
+    return ans
+        
+s="GeeksQuiz"
+list_s=list(s)
+print("Orginal word : ",s)
+print("The reversed stack is",reverse_stack(s))
