@@ -1,0 +1,17 @@
+s = [10, 20, 30, 40, 50]
+n = len(s)
+
+curr=0
+def removing_middle(s,curr,n):
+    mid = n//2 
+    if curr == mid:
+        s.pop()
+        return
+        
+    temp = s.pop()
+    
+    removing_middle(s,curr+1,n)
+    s.append(temp)
+    return s
+    
+print(removing_middle(s,curr,n))
