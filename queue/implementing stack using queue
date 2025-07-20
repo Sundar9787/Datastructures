@@ -1,0 +1,44 @@
+from collections import deque
+class stackusingqueue:
+    def __init__(self):
+        self.queue1=deque()
+        self.queue2=deque()
+    
+    def push(self,value):
+        self.queue1.append(value)
+        
+    def pop(self):
+        if  len(self.queue1)==0:
+            return "It is an empty Stack"
+        while len(self.queue1)>1:
+            self.queue2.append(self.queue1.popleft())
+        removed=self.queue1.popleft()
+        self.queue1,self.queue2 = self.queue2,self.queue1
+        return removed
+        
+    def peek(self):
+        if  len(self.queue1)==0:
+            return "It is an empty Stack"
+        while len(self.queue1)>1:
+            self.queue2.append(self.queue1.popleft())
+        top = self.queue1.popleft()
+        self.queue2.append(top)
+        print(f'The top element in the  stack is {top}')
+        self.queue1,self.queue2 = self.queue2,self.queue1
+        return top
+        
+    
+    def display(self):
+        if  len(self.queue1)==0:
+            return "It is an empty stack"
+        else:
+            print("Stack from top to bottom is:",list(self.queue1))
+            
+stq=stackusingqueue()
+stq.push(10)
+stq.push(20)
+stq.push(30)
+stq.peek()
+stq.pop()
+stq.peek()
+stq.display()
