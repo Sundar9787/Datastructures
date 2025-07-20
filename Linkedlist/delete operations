@@ -1,0 +1,56 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+    
+class SingleLL:
+    def __init__(self):
+        self.head = None 
+        
+    def insert(self,value):
+        new_node = Node(value)
+        
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next 
+            temp.next = new_node 
+            
+    def delete(self,value):
+        temp = self.head
+        
+        if temp is None:
+            print("The list is empty")
+            return
+        
+        if temp.data == value:
+            temp = temp.next
+            print(f'{value} has been deleted from the list')
+            return
+        
+        prev = None
+        while temp is not None and temp.data!= value:
+            prev = temp
+            temp = temp.next
+            
+        if temp is None:
+            print("There is no such elements")
+                
+        else:
+            prev.next = temp.next
+            print(f'{value} has been deleted from the list')
+      def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end ="->")
+            temp = temp.next
+        print("None")
+        
+sll = SingleLL()
+sll.insert(1)
+sll.insert(2)
+sll.insert(3)
+sll.delete(10)
+sll.display()
