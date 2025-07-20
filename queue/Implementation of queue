@@ -1,0 +1,35 @@
+class queue:
+    def __init__(self):
+        self.queue=[]
+        
+    def enqueue(self,value):
+        self.queue.append(value)
+        print(f'{value} is added into the queue')
+        return
+    
+    def dequeue(self):
+        if not self.queue:
+            return "It is an empty queue"
+        else:
+            removed = self.queue.pop(0)
+            print(f'The {removed} is removed from the queue')
+            
+    def peek(self):
+        if not self.queue:
+            return "It is an empty queue"
+        else:
+            print(f'The first member in the queue is {self.queue[0]}')
+            
+    def display(self):
+        print(self.queue) 
+
+q=queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.dequeue()
+q.peek()
+q.display()
+            
+        
+    
